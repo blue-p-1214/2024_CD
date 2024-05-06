@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+    private String userId;
+    private String password;
+    private String userName;
+    private String address;
+    private String email;
+    private int authority;
+
+    User selectById(String id);
+    int insertByUser(User user);
+    int deleteById(String id);
+    int updateByUser(User user);
+-->
+
+<mapper namespace="com.CD2024.smarTravel.user.model.mapper.UserMapper">
+
+	<resultMap id="user" type="user">
+		<id property="userId" column="user_id"/>
+		<result property="name" column="name"/>
+		<result property="address" column="address"/>
+		<result property="password" column="password"/>
+		<result property="salt" column="salt"/>
+		<result property="email" column="email"/>
+	</resultMap>
+
+	<select id="selectById" parameterType="string" resultType="user">
+		select *
+		from enjoytrip."user"
+		where user_id = #{userId};
+	</select>
+
+	<insert id="insertByUser" parameterType="user">
+		insert into enjoytrip."user"(user_id, user_name , address, password, email) values(#{userId},#{userName},#{address},#{password},#{email});
+	</insert>
+
+	<delete id="deleteById" parameterType="string">
+		delete from enjoytrip."user" where user_id = #{userId};
+	</delete>
+
+	<update id="updateByUser" parameterType="string">
+		update enjoytrip."user"
+		set name    = #{name},
+			address=#{address},
+			password=#{password},
+			email=#{email}
+		where user_id = #{userId};
+	</update>
+</mapper>
