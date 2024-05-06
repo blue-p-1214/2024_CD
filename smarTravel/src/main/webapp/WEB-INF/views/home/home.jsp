@@ -8,7 +8,7 @@
             <section class="hero">
                 <div class="container row" style="text-align : center">
                     <h2 class="section-title" style="text-align : center; font-weight:bold;">인기 여행지 검색</h2>
-                    <p class="hero-text" style="text-align : center; font-size : 0.8em">한샘과 함께 인기 있는 여행지를 탐색하세요.</p>
+                    <p class="hero-text" style="text-align : center; font-size : 0.8em">smarTravel과 함께 인기 있는 여행지를 탐색하세요.</p>
                 </div>
 
             </section>
